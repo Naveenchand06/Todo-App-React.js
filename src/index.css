@@ -1,1 +1,60 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+body {
+  margin: 0;
+  background-color: #c9e1ef;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 6em;
+  background-color: #00203e;
+  color: white;
+}
+
+.header-container h2 {
+  color: #82cffc;
+  font-family: "poppins";
+  font-weight: 900;
+  font-size: 1.8em;
+}
+
+.icon-holder {
+  font-size: 42px;
+}
+
+.icon-holder:hover {
+  font-size: 45px;
+  color: #85cbf3;
+  transition: font-size 200ms;
+  transition-timing-function: ease-in;
+}
+
+.container {
+  max-width: 950px;
+  margin: auto;
+}
+
+.container .card {
+  text-align: center;
+  padding: 8em 7.1em;
+  margin: 15px 20px;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  /* background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19); */
+}
+
+.container .cards-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
