@@ -1,17 +1,41 @@
 import TodoCard from "./TodoCard";
 
-import React from "react";
+import { React, useState } from "react";
 
 function Home() {
+  const [todos, setTodos] = useState([
+    {
+      id: 1,
+      title: "React",
+      list: [
+        {
+          todoTitle: "Learn React",
+          completed: false,
+        },
+      ],
+    },
+    {
+      id: 2,
+      title: "Nodejs",
+      list: [
+        {
+          todoTitle: "Learn Nodejs",
+          completed: false,
+        },
+        {
+          todoTitle: "Learn MongoDB",
+          completed: false,
+        },
+      ],
+    },
+  ]);
+
   return (
     <div className="container">
       <div className="cards-holder">
-        <TodoCard data="Todo 1" />
-        <TodoCard data="Todo 2" />
-        <TodoCard data="Todo 3" />
-        <TodoCard data="Todo 4" />
-        <TodoCard data="Todo 5" />
-        <TodoCard data="Todo 6" />
+        {todos.map((todo) => {
+          return <TodoCard key={todo.id} todoData={todo} />;
+        })}
       </div>
     </div>
   );

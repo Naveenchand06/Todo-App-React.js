@@ -6,10 +6,12 @@ function Header() {
   return (
     <div className="header-container">
       <h2>Todo App</h2>
-      <RiAddCircleLine
-        className="icon-holder"
-        onClick={() => console.log("icons Tapped")}
-      />
+      <div className="icon-container">
+        <RiAddCircleLine
+          className="icon-holder"
+          onClick={() => console.log("icons Tapped")}
+        />
+      </div>
     </div>
   );
 }

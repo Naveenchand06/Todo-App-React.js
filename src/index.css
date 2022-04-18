@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600&display=swap");
 
 body {
   margin: 0;
@@ -34,13 +35,13 @@ body {
 
 .container {
   max-width: 950px;
-  margin: auto;
+  margin: 20px auto;
 }
 
-.container .card {
+.card {
   text-align: center;
-  padding: 8em 7.1em;
-  margin: 15px 20px;
+  padding: 1em 3.5em;
+  margin: 25px 35px;
   background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
@@ -57,4 +58,58 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.card h2 {
+  font-weight: 600;
+  font-size: 2.8rem;
+}
+
+.card h3 {
+  font-family: "Readex Pro", sans-serif;
+  color: #063056;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.card p {
+  font-family: "Readex Pro", sans-serif;
+  color: rgb(25, 24, 24);
+}
+
+.card-link-style {
+  text-decoration: none;
+}
+
+.todo-detail-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.todo-detail-container h2 {
+  font-family: "Readex Pro";
+  color: #063056;
+  font-weight: 600;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.todo-list-card {
+  border-radius: 15px;
+  margin: 15px;
+  background-color: aliceblue;
+  padding: 1em 1em;
+}
+
+.todo-list-card input {
+  display: inline;
+  margin: 0 20px;
+}
+
+.todo-list-card p {
+  display: inline;
+  font-family: "Readex Pro", sans-serif;
+  color: #063056;
+  font-weight: 400;
+  font-size: 1.1rem;
 }
