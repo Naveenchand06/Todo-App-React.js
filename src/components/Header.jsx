@@ -1,6 +1,7 @@
 import React from "react";
 // import { GrAddCircle } from "react-icons/gr";
 import { RiAddCircleLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -11,6 +12,9 @@ function Header() {
           className="icon-holder"
           onClick={() => console.log("icons Tapped")}
         />
+        <Link to="/about">
+          <h4>About</h4>
+        </Link>
       </div>
     </div>
   );

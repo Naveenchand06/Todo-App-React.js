@@ -5,7 +5,6 @@ function TodoCard({ todoData }) {
   const navigate = useNavigate();
 
   const handleCardClick = () => {
-    console.log("card clicked");
     navigate(`/todo/${todoData.title}`, { state: { todoData } });
   };
 

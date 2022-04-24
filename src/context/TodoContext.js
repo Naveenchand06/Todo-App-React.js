@@ -28,17 +28,28 @@ export const TodoContextProvider = ({ children }) => {
         },
       ],
     },
+    {
+      id: 3,
+      title: "Angular JS",
+      list: [
+        {
+          todoTitle: "Learn Angular",
+          completed: false,
+        },
+        {
+          todoTitle: "Learn Angular Material",
+          completed: true,
+        },
+        {
+          todoTitle: "Learn Web3.js",
+          completed: true,
+        },
+      ],
+    },
   ]);
 
   const handleCheckbox = (id, itemIndex) => {
     const changed = todos;
-
-    changed.map((a) => {
-      if (a.id === id) {
-        a.list[itemIndex].completed = !a.list[itemIndex].completed;
-      }
-    });
-    setTodos(changed);
     console.log(todos);
   };
 
