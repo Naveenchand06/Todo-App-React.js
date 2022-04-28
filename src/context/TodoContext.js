@@ -1,60 +1,76 @@
-import { createContext, useState } from "react";
+import { createContext, useReducer } from "react";
+import { TodoReducer } from "./TodoReducer";
 
 const TodoContext = createContext();
 
 export const TodoContextProvider = ({ children }) => {
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      title: "React",
-      list: [
-        {
-          todoTitle: "Learn React",
-          completed: false,
-        },
-      ],
-    },
-    {
-      id: 2,
-      title: "Nodejs",
-      list: [
-        {
-          todoTitle: "Learn Nodejs",
-          completed: false,
-        },
-        {
-          todoTitle: "Learn MongoDB",
-          completed: true,
-        },
-      ],
-    },
-    {
-      id: 3,
-      title: "Angular JS",
-      list: [
-        {
-          todoTitle: "Learn Angular",
-          completed: false,
-        },
-        {
-          todoTitle: "Learn Angular Material",
-          completed: true,
-        },
-        {
-          todoTitle: "Learn Web3.js",
-          completed: true,
-        },
-      ],
-    },
-  ]);
+  const initialState = {
+    allTodos: [
+      {
+        id: 1,
+        title: "React",
+        list: [
+          {
+            id: 1,
+            todo: "Learn React",
+            completed: false,
+          },
+        ],
+      },
+      {
+        id: 2,
+        title: "Nodejs",
+        list: [
+          {
+            id: 1,
+            todo: "Learn Nodejs",
+            completed: false,
+          },
+          {
+            id: 2,
+            todo: "Learn MongoDB",
+            completed: true,
+          },
+        ],
+      },
+      {
+        id: 3,
+        title: "Angular JS",
+        list: [
+          {
+            id: 1,
+            todo: "Learn Angular",
+            completed: false,
+          },
+          {
+            id: 2,
+            todo: "Learn Angular Material",
+            completed: true,
+          },
+          {
+            id: 3,
+            todo: "Learn Web3.js",
+            completed: true,
+          },
+        ],
+      },
+    ],
+  };
+
+  const [state, dispatch] = useReducer(TodoReducer, initialState);
 
   const handleCheckbox = (id, itemIndex) => {
-    const changed = todos;
-    console.log(todos);
+    state.allTodos.map((data) => {
+      if (data.id === id) {
+        console.log(data.list[itemIndex]);
+        console.log(data.list[itemIndex].completed);
+      }
+    });
   };
 
   return (
-    <TodoContext.Provider value={{ todos, handleCheckbox }}>
+    <TodoContext.Provider value={{ allTodos: state.allTodos, handleCheckbox }}>
+      {console.log(state.allTodos)}
       {children}
     </TodoContext.Provider>
   );

@@ -11,19 +11,21 @@ function CollectionDetail() {
     <div className="todo-detail-container">
       <h2>{data.title}</h2>
 
-      {data.list.map((todo) => {
+      {data.list.map((oneTodo) => {
         return (
-          <div className={`todo-list-card`}>
+          <div className={`todo-list-card`} key={oneTodo.id}>
             <input
               className="todo-checkbox"
               type="checkbox"
-              id={data.id}
-              name={todo.Title}
-              value={todo.todoTitle}
-              onChange={handleCheckbox}
-              checked={todo.completed}
+              id={oneTodo.id}
+              name={oneTodo.Title}
+              value={oneTodo.todoTitle}
+              onChange={() =>
+                handleCheckbox(data.id, data.list.indexOf(oneTodo))
+              }
+              checked={oneTodo.completed}
             ></input>
-            <p>{todo.todoTitle}</p>
+            <p>{oneTodo.todo}</p>
           </div>
         );
       })}
