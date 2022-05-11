@@ -9,9 +9,9 @@ export const TodoContextProvider = ({ children }) => {
       {
         id: 1,
         title: "React",
-        list: [
+        todoList: [
           {
-            id: 1,
+            todoId: 1,
             todo: "Learn React",
             completed: false,
           },
@@ -20,14 +20,14 @@ export const TodoContextProvider = ({ children }) => {
       {
         id: 2,
         title: "Nodejs",
-        list: [
+        todoList: [
           {
-            id: 1,
+            todoId: 1,
             todo: "Learn Nodejs",
             completed: false,
           },
           {
-            id: 2,
+            todoId: 2,
             todo: "Learn MongoDB",
             completed: true,
           },
@@ -36,21 +36,11 @@ export const TodoContextProvider = ({ children }) => {
       {
         id: 3,
         title: "Angular JS",
-        list: [
+        todoList: [
           {
-            id: 1,
+            todoId: 1,
             todo: "Learn Angular",
             completed: false,
-          },
-          {
-            id: 2,
-            todo: "Learn Angular Material",
-            completed: true,
-          },
-          {
-            id: 3,
-            todo: "Learn Web3.js",
-            completed: true,
           },
         ],
       },
@@ -59,18 +49,8 @@ export const TodoContextProvider = ({ children }) => {
 
   const [state, dispatch] = useReducer(TodoReducer, initialState);
 
-  const handleCheckbox = (id, itemIndex) => {
-    state.allTodos.map((data) => {
-      if (data.id === id) {
-        console.log(data.list[itemIndex]);
-        console.log(data.list[itemIndex].completed);
-      }
-    });
-  };
-
   return (
-    <TodoContext.Provider value={{ allTodos: state.allTodos, handleCheckbox }}>
-      {console.log(state.allTodos)}
+    <TodoContext.Provider value={{ allTodos: state.allTodos }}>
       {children}
     </TodoContext.Provider>
   );

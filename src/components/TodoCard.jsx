@@ -4,26 +4,14 @@ import { Link, useNavigate } from "react-router-dom";
 function TodoCard({ todoData }) {
   const navigate = useNavigate();
 
-  const handleCardClick = () => {
-    navigate(`/todo/${todoData.title}`, { state: { todoData } });
-  };
-
   return (
-    // <Link
-    //   to={{
-    //     pathname: `/todo/${todoData.title}`,
-    //     state: {
-    //       todoData: todoData,
-    //     },
-    //   }}
-    //   className="card-link-style"
-    // >
-    <div className="card" onClick={handleCardClick}>
-      <h2>😀</h2>
-      <h3>{todoData.title}</h3>
-      <p>Total Todos: {todoData.list.length}</p>
-    </div>
-    // </Link>
+    <Link to={`/todo/${todoData.title}`} className="card-link-style">
+      <div className="card">
+        <h2>😀</h2>
+        <h3>{todoData.title}</h3>
+        <p>Total Todos: {todoData.todoList.length}</p>
+      </div>
+    </Link>
   );
 }
 

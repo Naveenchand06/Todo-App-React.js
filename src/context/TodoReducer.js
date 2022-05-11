@@ -1,7 +1,7 @@
 export const TodoReducer = (state, action) => {
   switch (action.type) {
     case "TODO_STATUS":
-      return {};
+      return state;
     default:
       return state;
   }
